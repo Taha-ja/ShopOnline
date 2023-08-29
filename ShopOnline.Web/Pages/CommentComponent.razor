@@ -1,0 +1,92 @@
+﻿<div class="mb-3 p-3">
+    <div>
+        <div style="display: flex; align-items: flex-start;">
+            <b style="margin-right: 10px;">@Comment.Author</b>
+            <div style="display: flex; flex-grow: 1; justify-content: space-between;">
+                <p style="margin-right: 10px; margin-bottom: 0;max-width: 500px; overflow: hidden; text-overflow: ellipsis;">@Comment.Content</p>
+                <small style="margin-bottom: 0; color:#2A30B5;">@FormatTimeAgo(Comment.Timestamp)</small>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-link btn-sm" style="margin-left:40px;text-decoration: none;color:#2A30B5" @onclick="ToggleReplyForm">Reply</a>
+        </div>
+    </div>
+
+
+    @if (ShowReplyForm)
+    {
+        <form @onsubmit="AddReply" class="d-flex mb-4" style="margin-left:50px">
+            <div class="form-group flex-grow-1 me-2">
+                <input id="replyInput" class="form-control no-input-outline" @bind="@NewReply.Content"></input>
+            </div>
+            <button type="submit" class="btn text-white no-focus-outline" style="background-color:#2A30B5">Send</button>
+        </form>
+    }
+
+    @if (Comment.Replies.Count > 0)
+    {
+        <ul style="list-style: none;">
+            @foreach (var reply in Comment.Replies)
+            {
+                <li class="d-flex justify-content-between">
+                    <p><b>@reply.Author</b> @reply.Content</p>
+                    <small style="color:#2A30B5">@FormatTimeAgo(reply.Timestamp)</small>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Comment Comment { get; set; }
+
+    private bool ShowReplyForm { get; set; }
+    private Comment NewReply { get; set; }
+
+    private void ToggleReplyForm()
+    {
+        ShowReplyForm = !ShowReplyForm;
+        NewReply = new Comment();
+    }
+
+    private void AddReply()
+    {
+        Comment.Replies.Add(NewReply);
+        ShowReplyForm = false;
+        NewReply = new Comment();
+    }
+    public string FormatTimeAgo(DateTime timestamp)
+    {
+        DateTime currentTimestamp = DateTime.Now;
+        TimeSpan timeDifference = currentTimestamp - timestamp;
+        string timeAgo;
+
+        if (timeDifference.TotalMinutes < 1)
+        {
+            timeAgo = "just now";
+        }
+        else if (timeDifference.TotalMinutes < 60)
+        {
+            timeAgo = $"{(int)timeDifference.TotalMinutes} minutes ago";
+        }
+        else if (timeDifference.TotalHours < 24)
+        {
+            timeAgo = $"{(int)timeDifference.TotalHours} hours ago";
+        }
+        else if (timeDifference.TotalDays < 30)
+        {
+            timeAgo = $"{(int)timeDifference.TotalDays} days ago";
+        }
+        else if (timeDifference.TotalDays < 365)
+        {
+            timeAgo = $"{(int)(timeDifference.TotalDays / 30)} months ago";
+        }
+        else
+        {
+            timeAgo = $"{(int)(timeDifference.TotalDays / 365)} years ago";
+        }
+
+        return timeAgo;
+    }
+}

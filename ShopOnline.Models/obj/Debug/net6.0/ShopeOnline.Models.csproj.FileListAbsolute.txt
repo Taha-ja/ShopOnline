@@ -1,0 +1,12 @@
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\bin\Debug\net6.0\ShopeOnline.Models.deps.json
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\bin\Debug\net6.0\ShopeOnline.Models.dll
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\bin\Debug\net6.0\ShopeOnline.Models.pdb
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.csproj.AssemblyReference.cache
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.AssemblyInfoInputs.cache
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.AssemblyInfo.cs
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.csproj.CoreCompileInputs.cache
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.dll
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\refint\ShopeOnline.Models.dll
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ShopeOnline.Models.pdb
+C:\Users\tjaaouan\source\repos\ShopOnlineSolution\ShopOnline.Models\obj\Debug\net6.0\ref\ShopeOnline.Models.dll

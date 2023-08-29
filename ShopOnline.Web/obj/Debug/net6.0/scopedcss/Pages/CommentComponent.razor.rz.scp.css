@@ -1,0 +1,13 @@
+.no-focus-outline:focus[b-n7mb884sfj] {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color:#2A30B5;
+}
+.no-input-outline:focus[b-n7mb884sfj] {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+}
+body[b-n7mb884sfj] {
+    background-color: #2A30B5;
+}

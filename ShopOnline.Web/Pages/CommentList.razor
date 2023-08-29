@@ -1,0 +1,98 @@
+﻿@page "/comment"
+<div class="componentContainer">
+
+    <div class="content">
+
+
+        <div class="bg-light border-2 my-3 top-element">
+
+<form @onsubmit="AddComment" class="d-flex">
+    <div class="form-group flex-grow-1 me-2">
+            <input id="commentInput" style="border:0px;" class="form-control no-input-outline" placeholder="Type your comment here ..." @bind="@newComment.Content"></input>
+    </div>
+        <button type="submit" class="btn text-white px-3 no-focus-outline" style="background-color:#2A30B5">Send</button>
+</form>
+</div>
+
+@if (comments.Count == 0)
+{
+    <p class="my-5 mx-3">No comments yet.</p>
+}
+else
+{
+            <ul class="aa list-container" style="list-style: none;">
+        @foreach (var comment in comments)
+        {
+            <li class="commentComponent">
+                <CommentComponent Comment="comment" />
+            </li>
+        }
+    </ul>
+}
+    </div>
+</div>
+
+
+
+@code {
+    private List<Comment> comments = new List<Comment>
+    {
+        new Comment
+        {
+            Author = "John",
+            Content = "Great course! Really helpful.",
+            Timestamp = DateTime.Now.AddDays(-2),
+            Replies = new List<Comment>()
+            {
+                new Comment
+                {
+                    Author = "Jane",
+                    Content = "Thank you, John!",
+                    Timestamp = DateTime.Now.AddDays(-1)
+                }
+            }
+        },
+        new Comment
+        {
+            Author = "Alex",
+            Content = "This course exceeded my expectations. Highly recommended!",
+            Timestamp = DateTime.Now.AddHours(-6),
+            Replies = new List<Comment>()
+            {
+                new Comment
+                {
+                    Author = "John",
+                    Content = "Glad you enjoyed it, Alex!",
+                    Timestamp = DateTime.Now.AddHours(-5)
+                }
+            }
+        },
+                new Comment
+        {
+            Author = "Fatime",
+            Content = "This course exceeded my expectations. Highly recommended!",
+            Timestamp = DateTime.Now.AddMinutes(-6),
+            Replies = new List<Comment>()
+            {
+                new Comment
+                {
+                    Author = "Rachid",
+                    Content = "Glad you enjoyed it, Alex!",
+                    Timestamp = DateTime.Now.AddHours(-5)
+                }
+            }
+        }
+
+    };
+
+    private Comment newComment = new Comment();
+
+    private void AddComment()
+    {
+        newComment.Timestamp = DateTime.Now;
+        comments.Add(newComment);
+
+        // Clear the comment input fields
+        newComment = new Comment();
+    }
+}

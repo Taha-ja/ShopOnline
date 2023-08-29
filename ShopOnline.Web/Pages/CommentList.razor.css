@@ -1,0 +1,44 @@
+﻿.no-focus-outline:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #2A30B5;;
+}
+.no-input-outline:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+}
+
+.commentComponent {
+    background: #fff !important;
+}
+.componentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: rgba(42, 48, 181, 0.05) !important;
+    overflow-y: auto;
+}
+.top-element {
+    position: sticky;
+    top: 0;
+    background-color: white !important;
+    padding: 10px;
+    min-width:600px;
+}
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.list-container {
+    margin-top: 20px;
+    background: rgba(42, 48, 181, 0.05) !important;
+    padding-left: 0px;
+}
+
+.top-element, .bottom-element {
+    padding: 20px;
+}
